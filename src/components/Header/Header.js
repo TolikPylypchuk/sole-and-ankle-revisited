@@ -54,7 +54,7 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
-  @media ${QUERIES.tablet} {
+  @media ${QUERIES.tabletAndSmaller} {
     border-top: 4px solid ${COLORS.gray[900]};
     justify-content: space-between;
     align-items: center;
@@ -66,7 +66,7 @@ const Nav = styled.nav`
   gap: 48px;
   margin: 0px 48px;
 
-  @media ${QUERIES.tablet} {
+  @media ${QUERIES.tabletAndSmaller} {
     gap: 32px;
     margin: 0;
   }
@@ -75,7 +75,7 @@ const Nav = styled.nav`
 const Side = styled.div`
   flex: 1;
 
-  @media ${QUERIES.tablet} {
+  @media ${QUERIES.tabletAndSmaller} {
     &:last-of-type {
       display: none;
     }
@@ -93,7 +93,7 @@ const NavLink = styled.a`
     color: ${COLORS.secondary};
   }
 
-  @media ${QUERIES.tablet} {
+  @media ${QUERIES.tabletAndSmaller} {
     display: none;
   }
 `;
@@ -101,7 +101,7 @@ const NavLink = styled.a`
 const NavButton = styled(UnstyledButton)`
   display: none;
 
-  @media ${QUERIES.tablet} {
+  @media ${QUERIES.tabletAndSmaller} {
     display: revert;
   }
 `;
