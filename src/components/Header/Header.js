@@ -1,18 +1,15 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { COLORS, WEIGHTS, QUERIES } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
+import UnstyledButton from '../UnstyledButton';
+import Icon from '../Icon';
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
 
   return (
     <header>
@@ -28,6 +25,16 @@ const Header = () => {
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
+
+          <NavButton>
+            <Icon id="shopping-bag" strokeWidth={1} />
+          </NavButton>
+          <NavButton>
+            <Icon id="search" strokeWidth={1} />
+          </NavButton>
+          <NavButton onClick={() => setShowMobileMenu(true)}>
+            <Icon id="menu" strokeWidth={1} />
+          </NavButton>
         </Nav>
         <Side />
       </MainHeader>
@@ -46,16 +53,33 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  @media ${QUERIES.tablet} {
+    border-top: 4px solid ${COLORS.gray[900]};
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${QUERIES.tablet} {
+    gap: 32px;
+    margin: 0;
+  }
 `;
 
 const Side = styled.div`
   flex: 1;
+
+  @media ${QUERIES.tablet} {
+    &:last-of-type {
+      display: none;
+    }
+  }
 `;
 
 const NavLink = styled.a`
@@ -67,6 +91,18 @@ const NavLink = styled.a`
 
   &:first-of-type {
     color: ${COLORS.secondary};
+  }
+
+  @media ${QUERIES.tablet} {
+    display: none;
+  }
+`;
+
+const NavButton = styled(UnstyledButton)`
+  display: none;
+
+  @media ${QUERIES.tablet} {
+    display: revert;
   }
 `;
 
