@@ -1,6 +1,7 @@
 {
   "name": "sole-and-ankle-revisited",
   "version": "0.1.0",
+  "homepage": "https://sole-ankle-revisited.workshop.tolik.io",
   "private": true,
   "dependencies": {
     "@reach/dialog": "0.15.0",
@@ -15,7 +16,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build && cp CNAME ./build",
+    "deploy": "gh-pages -d build --message 'Deploy to GitHub Pages'"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   },
   "eslintConfig": {
     "extends": [
