@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { COLORS, WEIGHTS } from '../../constants';
-
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
@@ -46,11 +44,11 @@ const MenuDialogOverlay = styled(DialogOverlay)`
   bottom: 0;
   left: 0;
   right: 0;
-  background: ${COLORS.dialogBackground};
+  background: var(--dialog-background);
 `;
 
 const MenuDialogContent = styled(DialogContent)`
-  background: ${COLORS.white};
+  background: var(--white);
   position: fixed;
   top: 0;
   right: 0;
@@ -82,11 +80,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--gray-900);
+  font-weight: var(--weight-medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--secondary);
   }
 `;
 
@@ -101,8 +99,8 @@ const Footer = styled.footer`
 const FooterLink = styled.a`
   font-size: 1rem;
   text-decoration: none;
-  color: ${COLORS.gray[700]};
-  font-weight: ${WEIGHTS.normal};
+  color: var(--gray-700);
+  font-weight: var(--weight-normal);
 `;
 
 export default MobileMenu;
