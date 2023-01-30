@@ -61,15 +61,24 @@ const MainHeader = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-inline: 16px;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: clamp(1rem, 3vw, 3rem);
+  gap: clamp(1rem, 9vw - 4.5rem, 3rem);
   margin: 0px 48px;
 
   @media ${QUERIES.tabletAndSmaller} {
     gap: 32px;
+    margin: 0;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 16px;
     margin: 0;
   }
 `;

@@ -16,7 +16,7 @@ const Link = styled.a`
 
 const Wrapper = styled.h1`
   font-size: 1.5rem;
-  font-weight: var(--wieght-bold);
+  font-weight: var(--weight-bold);
 `;
 
 export default Logo;
